@@ -3,3 +3,15 @@
     https://mp.weixin.qq.com/s/zutK9m9EGETn27zF0_FcbA
     https://yq.aliyun.com/articles/604028
     https://github.com/alibaba/nacos
+
+SpringBoot集成Dubbo及Nacos服务
+    step01: 后台启动Nacos服务，
+    step02: 启动dubbo-provider-nacos向Nacos注册，Nacos会逐个显示应用服务，如果该App中暴露多个服务，则每个服务均会显示。
+    step03: 启动dubbo-consumer-nacos向Nacos注册，注册完成后消费服务。
+    注释：
+        (1) 如果App中暴露过多个服务，查询起来费劲。
+        (2) 不像管理节点应用那种，Nacos服务管理的粒度更细，精确到具体的ServiceBean，所以服务管理中的服务粒度具体指的就
+            是程序中的一个接口方法。
+        (3) dubbo配置和Spring的application配置可以分开，这样可以便于配置管理，至于动态配置管理，则后面探索。
+        (4) dubbo直接调用接口方法服务，比SpringCloud通过RESTful风格的Http协议调用的效率要高。
+            性能测试参考：https://dubbo.apache.org/zh-cn/docs/user/perf-test.html

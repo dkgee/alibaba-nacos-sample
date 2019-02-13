@@ -44,26 +44,26 @@ public class AlibabaNacosClientApplication {
 //			return "invoke:" + url + ", return: " + result;
 //		}
 
-		@Autowired
-		private WebClient.Builder webClientBuilder;
-
-		@GetMapping("/test")
-		public Mono<String> test(){
-			Mono<String> result = webClientBuilder.build()
-					.get()
-					.uri(nacosServerName)
-					.retrieve()
-					.bodyToMono(String.class);
-			return result;
-		}
+//		@Autowired
+//		private WebClient.Builder webClientBuilder;
+//
+//		@GetMapping("/test")
+//		public Mono<String> test(){
+//			Mono<String> result = webClientBuilder.build()
+//					.get()
+//					.uri(nacosServerName)
+//					.retrieve()
+//					.bodyToMono(String.class);
+//			return result;
+//		}
 
 	}
 
-	@Bean
-	@LoadBalanced
-	public WebClient.Builder loadBalancedWebClientBuilder(){
-		return WebClient.builder();
-	}
+//	@Bean
+//	@LoadBalanced
+//	public WebClient.Builder loadBalancedWebClientBuilder(){
+//		return WebClient.builder();
+//	}
 
 }
 

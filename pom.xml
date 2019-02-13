@@ -17,6 +17,8 @@
         <module>alibaba-nacos-server</module>
         <module>alibaba-nacos-client</module>
         <module>alibaba-nacos-config-client</module>
+        <module>dubbo-provider-nacos</module>
+        <module>dubbo-consumer-nacos</module>
     </modules>
 
     <dependencyManagement>
