@@ -17,20 +17,23 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
-@EnableDiscoveryClient
+import java.io.IOException;
+
+//@EnableDiscoveryClient
 @SpringBootApplication
 public class AlibabaNacosClientApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		SpringApplication.run(AlibabaNacosClientApplication.class, args);
+		System.in.read();
 	}
 
 	@Slf4j
 	@RestController
 	static class TestController{
 
-		@Value("${nocas.server.name}")
-		String nacosServerName;
+//		@Value("${nocas.server.name}")
+//		String nacosServerName;
 
 //		@Autowired
 //		LoadBalancerClient loadBalancerClient;
